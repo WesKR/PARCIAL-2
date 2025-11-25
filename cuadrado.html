@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cuadrado de un Número</title>
+
+<style>
+body { font-family: Arial; background: #eef; margin: 20px; }
+.container {
+    background: white; padding: 20px; border-radius: 12px;
+    max-width: 420px; margin: auto; box-shadow: 0 0 10px #0003;
+}
+button { padding: 10px 15px; margin-top: 10px; cursor: pointer; }
+input { width: 95%; padding: 8px; margin-top: 10px; }
+h2 { text-align: center; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Cuadrado de un número</h2>
+
+    <input id="n" type="number" placeholder="Ingresa un número">
+    <button onclick="calc()">Calcular</button>
+    <p id="res"></p>
+     <!-- Botón para regresar -->
+    <button onclick="location.href='iindex.html'" 
+    style="background:#1a73e8; margin-top:30px;">
+    ⬅ Regresar al Menú
+    </button>
+</div>
+
+<script>
+function calc() {
+    let n = parseFloat(document.getElementById("n").value);
+
+    if (isNaN(n)) {
+        document.getElementById("res").textContent = "Ingresa un número válido";
+        return;
+    }
+
+    document.getElementById("res").textContent = "El cuadrado de " + n + " es: " + (n * n);
+}
+</script>
+
+</body>
+</html>

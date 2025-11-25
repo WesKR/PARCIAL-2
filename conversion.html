@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Conversión de Metros</title>
+
+<style>
+body { font-family: Arial; background: #eef; margin: 20px; }
+.container {
+    background: white; padding: 20px; border-radius: 12px;
+    max-width: 420px; margin: auto; box-shadow: 0 0 10px #0003;
+}
+button { padding: 10px 15px; cursor: pointer; }
+input { width: 95%; padding: 8px; margin-top: 10px; }
+h2 { text-align: center; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Conversión de metros</h2>
+
+    <input id="m" type="number" placeholder="Ingresa metros">
+    <button onclick="conv()">Convertir</button>
+    <p id="res"></p>
+     <!-- Botón para regresar -->
+    <button onclick="location.href='iindex.html'" 
+    style="background:#1a73e8; margin-top:30px;">
+    ⬅ Regresar al Menú
+    </button>
+</div>
+
+<script>
+function conv() {
+    let x = parseFloat(document.getElementById("m").value);
+
+    if (isNaN(x)) {
+        document.getElementById("res").textContent = "Ingresa un valor válido";
+        return;
+    }
+
+    let cm = x * 100;
+    let km = x / 1000;
+
+    document.getElementById("res").textContent =
+        x + " metros equivalen a " + cm + " cm y " + km + " km.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Comparación de Dos Valores</title>
+
+<style>
+body { font-family: Arial; background: #eef; margin: 20px; }
+.container {
+    background: white; padding: 20px; border-radius: 12px;
+    max-width: 420px; margin: auto; box-shadow: 0 0 10px #0003;
+}
+button { padding: 10px 15px; margin-top: 10px; cursor: pointer; }
+input { width: 95%; padding: 8px; margin-top: 10px; }
+h2 { text-align: center; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Comparación de dos valores</h2>
+
+    <input id="v1" type="number" placeholder="Valor 1">
+    <input id="v2" type="number" placeholder="Valor 2">
+
+    <button onclick="comp()">Comparar</button>
+    <p id="res"></p>
+     <!-- Botón para regresar -->
+    <button onclick="location.href='iindex.html'" 
+    style="background:#1a73e8; margin-top:30px;">
+    ⬅ Regresar al Menú
+    </button>
+</div>
+
+<script>
+function comp() {
+    let a = parseFloat(document.getElementById("v1").value);
+    let b = parseFloat(document.getElementById("v2").value);
+
+    if (isNaN(a) || isNaN(b) || a === b) {
+        document.getElementById("res").textContent =
+            "Debes ingresar dos números distintos.";
+        return;
+    }
+
+    let M = Math.max(a, b);
+    let m = Math.min(a, b);
+    let dif = M - m;
+
+    document.getElementById("res").textContent =
+        "El mayor es " + M + ", el menor es " + m + ", diferencia: " + dif;
+}
+</script>
+
+</body>
+</html>
